@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import scipy.special as sci
 xmin=0
 xmax=1
 resolution=1000
@@ -12,6 +13,7 @@ y3=np.cos(2*np.pi*x)
 y4=x*np.log(x)+(1-x)*np.log(1-x)
 y5=np.exp(-x**2)
 y6=1/2+1/2+np.tanh((x-0.5)/0.01)
+y7=sci.erf(x)
 fig=plt.figure(dpi=300)
 fig,ax=plt.subplots()
 ax.plot(x,y)
@@ -27,6 +29,6 @@ plt.xticks(np.arange(min(x),max(x),0.1),fontsize=10,**fontname)
 plt.xlim([0,0.5])
 plt.yticks(np.arange(-2.1,2.1,0.5),fontsize=10,**fontname)
 plt.ylim([-2.1,1.1])
-plt.legend(["y","y2","y3","y4","y5","y6"],loc='lower left')
+plt.legend(["y","y2","y3","y4","y5","y6","y7"],loc='lower left')
 plt.title("test",fontsize=20,**fontname)
 
